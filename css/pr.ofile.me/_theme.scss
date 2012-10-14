@@ -1,0 +1,61 @@
+/*------------------------------------*\
+    $THEME
+\*------------------------------------*/
+/**
+ * This is your theme stylesheet where you apply your design to your card and
+ * make it your own. Delete everything below and get cracking!
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * BASE.................Basic HTML elements
+ * CARD.................Card personalisation
+ * ATTRIBUTION..........If you gotta have it you might as well make it look nice
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+html{
+    background-color:#333;
+    color:#fff;
+    font-family:sans-serif;
+}
+a{
+    color:$brand-color;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $CARD
+\*------------------------------------*/
+.card{
+    background-color:#fff;
+    color:#333;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $ATTRIBUTION
+\*------------------------------------*/
+.attribution{}
+    .attribution__link{
+        display:block;
+        color:#fff;
+    }

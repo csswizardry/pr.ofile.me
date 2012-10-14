@@ -1,0 +1,122 @@
+/*------------------------------------*\
+    $CARD
+\*------------------------------------*/
+/**
+ * This stylesheet controls the functionality of the card. Try and avoid
+ * changing anything in here.
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * BASE.................Basic HTML elements
+ * CARD.................The card itself
+ */
+
+
+
+
+
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+html{
+    padding:$base-spacing-unit +px;
+    @include vendor(text-size-adjust, 100%);
+}
+
+
+
+
+
+/*------------------------------------*\
+    $CARD
+\*------------------------------------*/
+.card{
+    @extend .island;
+    margin-bottom:0;
+}
+    .card__front,
+    .card__back{
+        @extend .island;
+        padding:0;
+        margin-bottom:0;
+        opacity:1;
+        @include vendor(transition, 0.2s opacity linear);
+    }
+    .card__front{
+    }
+    .card__back{
+    }
+
+/**
+ * Media queries; this is where the magic happens!
+ */
+/**
+ * Assign the hidden state to a mixin so we don’t have to maintain it in two
+ * different places.
+ */
+@mixin card-hidden-state{
+    position:absolute;
+	left:-9999px;
+}
+@media (max-width:480px) and (orientation:portrait){
+
+    /**
+     * Hide the back of the card in portrait mode.
+     */
+    .card__back{
+    	@include card-hidden-state;
+    }
+
+}
+
+
+@media (max-width:480px) and (orientation:landscape){
+
+    /**
+     * Hide the front of the card in landscape mode.
+     */
+    .card__front{
+    	@include card-hidden-state;
+    }
+
+}
+
+
+
+
+
+/*------------------------------------*\
+    $TITLE
+\*------------------------------------*/
+.title{
+    margin-bottom:0;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $AVATAR
+\*------------------------------------*/
+.avatar{
+    max-width:(3 * $base-spacing-unit) +px;
+}
+
+
+
+
+
+/*------------------------------------*\
+    $ATTRIBUTION
+\*------------------------------------*/
+.attribution{
+    margin-bottom:0;
+}

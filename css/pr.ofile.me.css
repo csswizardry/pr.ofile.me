@@ -1,0 +1,908 @@
+@charset "UTF-8";
+/*------------------------------------*\
+    PR.OFILE.ME.CSS
+\*------------------------------------*/
+/**
+ *
+ * sass --watch pr.ofile.me.scss:pr.ofile.me.min.css --style compressed
+ *
+ * Here we set up some variables, include the inuit.css framework, then add our
+ * project-specific components afterwards.
+ */
+/*------------------------------------*\
+    $VARS
+\*------------------------------------*/
+/**
+ * Set up project-specific variables here which are then used throughout your
+ * build. These variables are automatically picked up by inuit.css so you should
+ * never need to modify any framework code.
+ */
+/*------------------------------------*\
+    INUIT.CSS
+\*------------------------------------*/
+/* inuitcss.com -- @inuitcss -- @csswizardry */
+/**
+ * inuit.css acts as a base stylesheet which you should extend with your own
+ * theme stylesheet.
+ *
+ * inuit.css aims to do the heavy lifting; sorting objects and abstractions,
+ * design patterns and fiddly bits of CSS, whilst leaving as much design as
+ * possible to you. inuit.css is the scaffolding to your decorator.
+ * 
+ * This stylesheet is heavily documented and contains lots of comments, please
+ * take care to read and refer to them as you build. For further support please
+ * tweet at @inuitcss.
+ *
+ * Owing to the amount of comments please only ever use `inuit.min.css` in
+ * production. This file is purely a dev document.
+ * 
+ * The table of contents below maps to section titles of the same name, to jump
+ * to any section simply run a find for $[SECTION-TITLE].
+ *
+ * Most objects and abstractions come with a chunk of markup that you should be
+ * able to paste into any view to quickly see how the CSS works in conjunction
+ * with the correct HTML.
+ *
+ * LICENSE
+ *
+ * Copyright 2012 Harry Roberts
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ * http://apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ * Thank you for choosing inuit.css. May your specificity always stay low.
+ */
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * CONTENTS............You’re reading it!
+ * WARNING.............Here be dragons!
+ * IMPORTS.............Begin importing the sections below
+ * 
+ * MIXINS..............Super-simple Sass stuff
+ * RESET...............Set some defaults
+ * CLEARFIX............
+ * SHARED..............Shared declarations
+ * 
+ * MAIN................High-level elements like `html`, `body`, etc.
+ * HEADINGS............Double-stranded heading hierarchy
+ * PARAGRAPHS..........
+ * SMALLPRINT..........Smaller text elements like `small`
+ * QUOTES..............
+ * CODE................
+ * LINKS...............
+ * LISTS...............
+ * IMAGES..............
+ * TABLES..............
+ * FORMS...............
+ * 
+ * GRIDS...............Fluid, proportional and nestable grids
+ * COLUMNS.............CSS3 columns
+ * NAV.................A simple abstraction to put a list in horizontal nav mode
+ * PAGINATION..........Very stripped back, basic paginator
+ * MEDIA...............Media object
+ * ISLAND..............Boxed off content
+ * BLOCK-LIST..........Blocky lists of content
+ * MATRIX..............Gridded lists
+ * SPLIT...............A simple split-in-two object
+ * THIS-OR-THIS........Options object
+ * COMPLEX-LINK........
+ * FLYOUT..............Flyout-on-hover object
+ * SPRITE..............Generic spriting element
+ * ICON-TEXT...........Icon and text couplings
+ * BUTTONS.............
+ * LOZENGES............Basic lozenge styles
+ * 
+ * BRAND...............Helper class to apply brand treatment to elements
+ * HELPER..............A series of helper classes to use arbitrarily
+ */
+/*------------------------------------*\
+    $WARNING
+\*------------------------------------*/
+/*
+ * inuit.css, being an OO framework, works in keeping with the open/closed
+ * principle. The variables you set previously are now being used throughout
+ * inuit.css to style everything we need for a base. Any custom styles SHOULD
+ * NOT be added or modified in inuit.css directly, but added via your theme
+ * stylesheet as per the open/closed principle:
+ * 
+ * csswizardry.com/2012/06/the-open-closed-principle-applied-to-css
+ * 
+ * Try not to edit any CSS beyond this point; if you find you need to do so
+ * it is a failing of the framework so please tweet at @inuitcss.
+ */
+/*------------------------------------*\
+    $IMPORTS
+\*------------------------------------*/
+/**
+ * Generic utility styles etc.
+ */
+/*------------------------------------*\
+    $MIXINS
+\*------------------------------------*/
+/**
+ * Create a fully formed type style (sizing and vertical rhythm) by passing in a
+ * single value, e.g.:
+ *
+   `@include font-size(10);`
+ *
+ * Thanks to @redclov3r for the `line-height` Sass:
+ * twitter.com/redclov3r/status/250301539321798657
+ */
+/**
+ * Create vendor-prefixed CSS in one go, e.g.
+ *
+   `@include vendor(box-sizing, border-box);`
+ *
+ */
+/*------------------------------------*\
+    $RESET
+\*------------------------------------*/
+/**
+ * A more considered reset; more of a restart... 
+ * As per: csswizardry.com/2011/10/reset-restarted
+ */
+body,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+dl, dd, ol, ul,
+form, fieldset, legend,
+table, th, td, caption,
+figure,
+hr {
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure, footer,
+header, hgroup, menu, nav, section {
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+strong, b, mark {
+  font-weight: bold;
+  font-style: inherit;
+}
+
+em, i, cite, q, address, dfn, var {
+  font-style: italic;
+  font-weight: inherit;
+}
+
+abbr[title], dfn[title] {
+  cursor: help;
+  border-bottom: 1px dotted;
+}
+
+ins {
+  border-bottom: 1px solid;
+}
+
+a, u, ins {
+  text-decoration: none;
+}
+
+del, s {
+  text-decoration: line-through;
+}
+
+img {
+  border: none;
+  font-style: italic;
+}
+
+input,
+select, option, optgroup,
+textarea {
+  font: inherit;
+}
+
+/**
+ * Give form elements some cursor interactions...
+ */
+label,
+input,
+textarea,
+button,
+select,
+option {
+  cursor: pointer;
+}
+
+.text-input:active,
+.text-input:focus,
+textarea:active,
+textarea:focus {
+  cursor: text;
+  outline: none;
+}
+
+/*------------------------------------*\
+    $CLEARFIX
+\*------------------------------------*/
+/**
+ * Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
+ * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
+ * and over in your markup.
+ */
+.cf, .media, .island, .card, .card__front,
+.card__back,
+.islet {
+  zoom: 1;
+}
+.cf:before, .media:before, .island:before, .card:before, .card__front:before,
+.card__back:before,
+.islet:before, .cf:after, .media:after, .island:after, .card:after, .card__front:after,
+.card__back:after,
+.islet:after {
+  content: "";
+  display: table;
+}
+.cf:after, .media:after, .island:after, .card:after, .card__front:after,
+.card__back:after,
+.islet:after {
+  clear: both;
+}
+
+/*------------------------------------*\
+    $SHARED
+\*------------------------------------*/
+/**
+ * Where `margin-bottom` is concerned, this value will be the same as the
+ * base line-height. This allows us to keep a consistent vertical rhythm.
+ * As per: csswizardry.com/2012/06/single-direction-margin-declarations
+ */
+/**
+ * Base elements
+ */
+h1, h2, h3, h4, h5, h6, hgroup,
+ul, ol, dl,
+blockquote, p, address,
+table,
+fieldset, figure,
+pre,
+hr,
+.sass-margin-bottom,
+.media,
+.island,
+.card,
+.card__front,
+.card__back,
+.islet {
+  margin-bottom: 18px;
+  margin-bottom: 1.5rem;
+}
+.islet h1, .islet h2, .islet h3, .islet h4, .islet h5, .islet h6, .islet hgroup, .islet
+ul, .islet ol, .islet dl, .islet
+blockquote, .islet p, .islet address, .islet
+table, .islet
+fieldset, .islet figure, .islet
+pre, .islet
+hr, .islet
+.sass-margin-bottom, .islet
+.media, .islet
+.island, .islet
+.card, .islet
+.card__front,
+.islet .card__back, .islet
+.islet {
+  margin-bottom: 9px;
+  margin-bottom: 0.75rem;
+}
+
+/**
+ * Doubled up `margin-bottom` helper class.
+ */
+.landmark {
+  margin-bottom: 36px;
+  margin-bottom: 3rem;
+}
+
+/**
+ * Where `margin-left` is concerned we want to try and indent certain elements
+ * by a consistent amount. Define that amount once, here.
+ */
+ul, ol, dd {
+  margin-left: 36px;
+  margin-left: 3rem;
+}
+
+/**
+ * Base styles; unclassed HTML elements etc.
+ */
+/*------------------------------------*\
+    $MAIN
+\*------------------------------------*/
+html {
+  font: 0.75em/1.5 serif;
+  overflow-y: scroll;
+}
+
+/*------------------------------------*\
+    $HEADINGS
+\*------------------------------------*/
+/**
+ * As per: csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css
+ *
+ * When we define a heading we also define a corresponding class to go with it.
+ * This allows us to apply, say, `class=alpha` to a `h3`; a double-stranded
+ * heading hierarchy.
+ */
+h1, .alpha {
+  font-size: 36px;
+  font-size: 3rem;
+  line-height: 1;
+}
+
+h2, .beta {
+  font-size: 30px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+h3, .gamma {
+  font-size: 24px;
+  font-size: 2rem;
+  line-height: 1.5;
+}
+
+h4, .delta {
+  font-size: 20px;
+  font-size: 1.66667rem;
+  line-height: 1.8;
+}
+
+h5, .epsilon {
+  font-size: 16px;
+  font-size: 1.33333rem;
+  line-height: 1.125;
+}
+
+h6, .zeta {
+  font-size: 14px;
+  font-size: 1.16667rem;
+  line-height: 1.28571;
+}
+
+/**
+ * Heading groups and generic any-heading class.
+ * To target any heading of any level simply apply a class of `.hN`, e.g.:
+ * 
+   <hgroup>
+       <h1 class=hN>inuit.css</h1>
+       <h2 class=hN>Best. Framework. Ever!</h2>
+   </hgroup>
+ * 
+ */
+hgroup .hN {
+  margin-bottom: 0;
+}
+
+/**
+ * A series of classes for setting massive type; for use in heroes, mastheads,
+ * promos, etc.
+ */
+.giga {
+  font-size: 96px;
+  font-size: 8rem;
+  line-height: 1.125;
+}
+
+.mega {
+  font-size: 72px;
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.kilo {
+  font-size: 48px;
+  font-size: 4rem;
+  line-height: 1.125;
+}
+
+/*------------------------------------*\
+    $PARAGRAPHS
+\*------------------------------------*/
+/**
+ * The `.lede` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger.
+ */
+.lede,
+.lead {
+  font-size: 1.125em;
+}
+
+/*------------------------------------*\
+    $SMALLPRINT
+\*------------------------------------*/
+/**
+ * A series of classes for setting tiny type; for use in smallprint etc.
+ *
+ * `small` is relative to whatever its parent is, `.milli` and `.micro` are
+ * absolute.
+ */
+small {
+  font-size: 0.75em;
+}
+
+.smallprint,
+.milli {
+  font-size: 12px;
+  font-size: 1rem;
+  line-height: 1.5;
+  line-height: 1;
+  /* 12px */
+}
+
+.micro {
+  font-size: 10px;
+  font-size: 0.83333rem;
+  line-height: 1.8;
+  line-height: 1.2;
+  /* 12px */
+}
+
+/*------------------------------------*\
+    $LINKS
+\*------------------------------------*/
+/**
+ * Say no to negative hovers, as per: csswizardry.com/2011/05/on-negative-hovers
+ */
+a {
+  /**
+   * Set colors etc in your theme stylesheet.
+   */
+}
+
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline;
+}
+
+/**
+ * ‘Current’ states, e.g.:
+ *
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li class=current><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+.current a {
+  cursor: text;
+  text-decoration: underline;
+}
+
+/*------------------------------------*\
+    $IMAGES
+\*------------------------------------*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure > img {
+  display: block;
+}
+
+/**
+ * Objects and abstractions
+ */
+/*------------------------------------*\
+    $MEDIA
+\*------------------------------------*/
+/**
+ * Place any image- and text-like content side-by-side, as per:
+ * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+ * E.g.:
+ *
+   <div class=media>
+       <img src=http://placekitten.com/200/300 alt="" class=media__img>
+       <p class=media__body>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+   </div>
+ *
+ */
+.media {
+  display: block;
+}
+
+.media__img {
+  float: left;
+  margin-right: 18px;
+}
+
+/**
+ * Reversed image location (right instead of left).
+ */
+.media__img--rev {
+  float: right;
+  margin-left: 18px;
+}
+
+.media__img img,
+.media__img--rev img {
+  display: block;
+}
+
+.media__body {
+  overflow: hidden;
+}
+
+.media__body,
+.media__body > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * `.img`s in `.islet`s need an appropriately sized margin.
+ */
+.islet .media__img {
+  margin-right: 9px;
+}
+
+.islet .media__img--rev {
+  margin-left: 9px;
+}
+
+/*------------------------------------*\
+    $ISLAND
+\*------------------------------------*/
+/**
+ * Simple, boxed off content, as per: csswizardry.com/2011/10/the-island-object
+ * E.g.:
+ *
+   <div class=island>
+       I am boxed off.
+   </div>
+ *
+ */
+.island, .card, .card__front,
+.card__back,
+.islet {
+  display: block;
+}
+
+.island, .card, .card__front,
+.card__back {
+  padding: 18px;
+}
+
+.island > :last-child, .card > :last-child, .card__front > :last-child,
+.card__back > :last-child,
+.islet > :last-child {
+  margin-bottom: 0;
+}
+
+/**
+ * Just like `.island`, only smaller.
+ */
+.islet {
+  padding: 9px;
+}
+
+/*------------------------------------*\
+    $BLOCK-LIST
+\*------------------------------------*/
+/**
+ * Create big blocky lists of content, e.g.:
+ *
+   <ul class=block-list>
+      <li>Foo</li>
+      <li>Bar</li>
+      <li>Baz</li>
+      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
+   </ul>
+  *
+  * Extend this object in your theme stylesheet.
+ */
+.block-list,
+.block-list > li {
+  border: 0 solid #ccc;
+  /* Override this color in your theme stylesheet */
+}
+
+.block-list {
+  list-style: none;
+  margin-left: 0;
+  border-top-width: 1px;
+}
+
+.block-list > li {
+  border-bottom-width: 1px;
+  padding: 9px;
+}
+
+.block-list__link {
+  display: block;
+  padding: 9px;
+  margin: -9px;
+}
+
+/*------------------------------------*\
+    $COMPLEX-LINK
+\*------------------------------------*/
+/**
+ * As inspired by @necolas:
+ * github.com/necolas/suit-utils/blob/master/link.css#L18
+ * 
+ * Add hover behaviour to only slected items within links, e.g.:
+ * 
+   <a href=log-in class=complex-link>
+       <i class="s s--user"></i>
+       <span class=complex-link__target>Log in</span>
+   </a>
+ * 
+ */
+.complex-link,
+.complex-link:hover,
+.complex-link:active,
+.complex-link:focus {
+  text-decoration: none;
+}
+
+.complex-link:hover .complex-link__target,
+.complex-link:active .complex-link__target,
+.complex-link:focus .complex-link__target {
+  text-decoration: underline;
+}
+
+/**
+ * Style trumps; helper and brand classes
+ */
+/*------------------------------------*\
+    $BRAND
+\*------------------------------------*/
+/**
+ * `.brand` is a quick and simple way to apply your brand face and/or color to
+ * any element using a handy helper class.
+ */
+.brand {
+  font-family: "Helvetica Neue", sans-serif!important;
+  color: #f43059!important;
+}
+
+.brand-face {
+  font-family: "Helvetica Neue", sans-serif!important;
+}
+
+.brand-color,
+.brand-colour {
+  color: #f43059!important;
+}
+
+/*------------------------------------*\
+    $HELPER
+\*------------------------------------*/
+/**
+ * A series of helper classes to use arbitrarily. Only use a helper class if an
+ * element/component doesn’t already have a class to which you could apply this
+ * styling, e.g. if you need to float `.main-nav` left then add `float:left;` to
+ * that ruleset as opposed to adding the `.fl` class to the markup.
+ */
+.fr {
+  float: right;
+}
+
+.fl {
+  float: left;
+}
+
+.text-center,
+.text-centre {
+  text-align: center;
+}
+
+/**
+ * Pull items full width of `.island` parents.
+ */
+.full-bleed {
+  margin-right: -18px;
+  margin-left: -18px;
+}
+
+.islet > .full-bleed {
+  margin-right: -9px;
+  margin-left: -9px;
+}
+
+/**
+ * Add a help cursor to any element that gives the user extra information on
+ * `:hover`.
+ */
+.informative {
+  cursor: help;
+}
+
+/**
+ * Align items to the right where they imply progression/movement forward, e.g.:
+ *
+   <p class=proceed><a href=#>Read more...</a></p>
+ *
+ */
+.proceed {
+  text-align: right;
+}
+
+/**
+ * Add a right-angled quote to links that imply movement, e.g.:
+ *
+   <a href=# class=go>Read more</a>
+ *
+ */
+.go:after {
+  content: " »";
+}
+
+/**
+ * Apply capital case to an element (usually a `strong`).
+ */
+.caps {
+  text-transform: uppercase;
+}
+
+/**
+ * Hide content off-screen without resorting to `display:none;`
+ */
+.accessibility {
+  position: absolute;
+  left: -99999px;
+}
+
+[dir=rtl] .accessibility {
+  left: auto;
+  right: -99999px;
+}
+
+/*------------------------------------*\
+    $CARD
+\*------------------------------------*/
+/**
+ * This stylesheet controls the functionality of the card. Try and avoid
+ * changing anything in here.
+ */
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * BASE.................Basic HTML elements
+ * CARD.................The card itself
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+html {
+  padding: 18px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -o-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/*------------------------------------*\
+    $CARD
+\*------------------------------------*/
+.card {
+  margin-bottom: 0;
+}
+
+.card__front,
+.card__back {
+  padding: 0;
+  margin-bottom: 0;
+  opacity: 1;
+  -webkit-transition: 0.2s opacity linear;
+  -moz-transition: 0.2s opacity linear;
+  -ms-transition: 0.2s opacity linear;
+  -o-transition: 0.2s opacity linear;
+  transition: 0.2s opacity linear;
+}
+
+/**
+ * Media queries; this is where the magic happens!
+ */
+/**
+ * Assign the hidden state to a mixin so we don’t have to maintain it in two
+ * different places.
+ */
+@media (max-width: 480px) and (orientation: portrait) {
+  /**
+   * Hide the back of the card in portrait mode.
+   */
+  .card__back {
+    position: absolute;
+    left: -9999px;
+  }
+}
+@media (max-width: 480px) and (orientation: landscape) {
+  /**
+   * Hide the front of the card in landscape mode.
+   */
+  .card__front {
+    position: absolute;
+    left: -9999px;
+  }
+}
+/*------------------------------------*\
+    $TITLE
+\*------------------------------------*/
+.title {
+  margin-bottom: 0;
+}
+
+/*------------------------------------*\
+    $AVATAR
+\*------------------------------------*/
+.avatar {
+  max-width: 54px;
+}
+
+/*------------------------------------*\
+    $ATTRIBUTION
+\*------------------------------------*/
+.attribution {
+  margin-bottom: 0;
+}
+
+/*------------------------------------*\
+    $THEME
+\*------------------------------------*/
+/**
+ * This is your theme stylesheet where you apply your design to your card and
+ * make it your own. Delete everything below and get cracking!
+ */
+/*------------------------------------*\
+    $CONTENTS
+\*------------------------------------*/
+/**
+ * BASE.................Basic HTML elements
+ * CARD.................Card personalisation
+ * ATTRIBUTION..........If you gotta have it you might as well make it look nice
+ */
+/*------------------------------------*\
+    $BASE
+\*------------------------------------*/
+html {
+  background-color: #333;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+a {
+  color: #f43059;
+}
+
+/*------------------------------------*\
+    $CARD
+\*------------------------------------*/
+.card {
+  background-color: #fff;
+  color: #333;
+}
+
+/*------------------------------------*\
+    $ATTRIBUTION
+\*------------------------------------*/
+.attribution__link {
+  display: block;
+  color: #fff;
+}
