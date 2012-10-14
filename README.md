@@ -17,6 +17,7 @@ normal and get started!
 ## Demo
 
 My demo card can be found at
+[hry.rbrts.me/profile](http://hry.rbrts.me/profile/index.html)
 
 ## Installation and usage
 
