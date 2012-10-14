@@ -14,6 +14,13 @@ If you would like to remove this link then please consider
 If you don’t mind the attribution link then feel free to download the project as
 normal and get started!
 
+### Try before you buy
+
+If you want to use pr.ofile.me before deciding to donate then you can just
+download the project files as usual and then retrospectively
+[make a purchase through Gumroad](http://gum.co/VqTV) once you’re happy with
+things.
+
 ## Demo
 
 My demo card can be found at
