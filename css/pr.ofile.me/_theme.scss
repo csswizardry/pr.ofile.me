@@ -50,6 +50,7 @@ a{
     .card:before,
     .card:after{
         border:9px solid #f0f0f0;
+        @include vendor(border-radius, 4px);
         @include vendor(box-shadow, 0 0 10px rgba(0,0,0,0.25));
     }
     .card:before,
@@ -82,6 +83,9 @@ a{
 /*------------------------------------*\
     $INTRO
 \*------------------------------------*/
+    .intro__avatar{
+        @include vendor(border-radius, 100%);
+    }
     .intro__tagline{
         font-weight:bold;
     }
