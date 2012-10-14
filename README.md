@@ -8,14 +8,15 @@ pr.ofile.me is, as with all of my projects, totally free for people to download
 and use. A requirement of pr.ofile.me is that you must maintain a visible
 attribution link in the page.
 
-If you would like to remove this link then please consider purchasing
-pr.ofile.me via Gumroad:
-
-<a href="http://gum.co/VqTV" class="gumroad-button">pr.ofile.me</a>
-<script src="https://gumroad.com/js/gumroad-button.js"></script>
+If you would like to remove this link then please consider
+**[purchasing pr.ofile.me via Gumroad for $3.99](http://gum.co/VqTV)**.
 
 If you don’t mind the attribution link then feel free to download the project as
 normal and get started!
+
+## Demo
+
+My demo card can be found at
 
 ## Installation and usage
 
