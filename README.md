@@ -9,7 +9,7 @@ and use. A requirement of pr.ofile.me is that you must maintain a visible
 attribution link in the page.
 
 If you would like to remove this link then please consider
-**[purchasing pr.ofile.me via Gumroad for $3.99](http://gum.co/VqTV)**.
+**[donating to pr.ofile.me through Gumroad](http://gum.co/VqTV)**.
 
 If you don’t mind the attribution link then feel free to download the project as
 normal and get started!
