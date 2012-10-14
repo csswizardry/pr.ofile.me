@@ -58,3 +58,12 @@ Upload your card to a directory on your site (e.g. foo.com/profile) and navigate
 to that URL on your phone. From here you can add your (and others’) card to your
 Home Screen for fast, chromeless access to your information. To turn your
 business card over simply rotate your phone.
+
+---
+
+## Donors
+
+These lovely people have [donated to pr.ofile.me](http://gum.co/VqTV), why not
+view their cards?
+
+* **Name:** _Profile URL_
