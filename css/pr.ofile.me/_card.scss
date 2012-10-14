@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    $CARD
+    CARD
 \*------------------------------------*/
 /**
  * This stylesheet controls the functionality of the card. Try and avoid
@@ -16,6 +16,8 @@
 /**
  * BASE.................Basic HTML elements
  * CARD.................The card itself
+ * INTRO................Avatar, name etc.
+ * ATTRIBUTION..........
  */
 
 
@@ -93,22 +95,16 @@ html{
 
 
 /*------------------------------------*\
-    $TITLE
+    $INTRO
 \*------------------------------------*/
-.title{
-    margin-bottom:0;
-}
-
-
-
-
-
-/*------------------------------------*\
-    $AVATAR
-\*------------------------------------*/
-.avatar{
-    max-width:(3 * $base-spacing-unit) +px;
-}
+.intro{}
+    .intro__avatar{
+        max-width:(3 * $base-spacing-unit) +px;
+    }
+    .intro__name{
+        margin-bottom:0;
+    }
+    .intro__tagline{}
 
 
 

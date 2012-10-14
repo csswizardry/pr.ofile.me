@@ -33,6 +33,11 @@
         border-bottom-width:1px;
         @include vendor(box-sizing, border-box);
     }
+        .matrix__link{
+            display:block;
+            padding:$half-spacing-unit +px;
+            margin:-$half-spacing-unit +px;
+        }
 
 /**
  * The `.multi-list` object is a lot like the `.matrix` object only without the

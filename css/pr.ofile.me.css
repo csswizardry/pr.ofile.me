@@ -240,20 +240,24 @@ textarea:focus {
  * Extend the clearfix class with Sass to avoid the `.cf` class appearing over
  * and over in your markup.
  */
-.cf, .media, .island, .card, .card__front,
+.cf, .gw,
+.grid-wrapper, .media, .island, .card, .card__front,
 .card__back,
 .islet {
   zoom: 1;
 }
-.cf:before, .media:before, .island:before, .card:before, .card__front:before,
+.cf:before, .gw:before,
+.grid-wrapper:before, .media:before, .island:before, .card:before, .card__front:before,
 .card__back:before,
-.islet:before, .cf:after, .media:after, .island:after, .card:after, .card__front:after,
+.islet:before, .cf:after, .gw:after,
+.grid-wrapper:after, .media:after, .island:after, .card:after, .card__front:after,
 .card__back:after,
 .islet:after {
   content: "";
   display: table;
 }
-.cf:after, .media:after, .island:after, .card:after, .card__front:after,
+.cf:after, .gw:after,
+.grid-wrapper:after, .media:after, .island:after, .card:after, .card__front:after,
 .card__back:after,
 .islet:after {
   clear: both;
@@ -356,15 +360,15 @@ h2, .beta {
 }
 
 h3, .gamma {
-  font-size: 24px;
-  font-size: 2rem;
-  line-height: 1.5;
+  font-size: 22px;
+  font-size: 1.83333rem;
+  line-height: 1.63636;
 }
 
 h4, .delta {
-  font-size: 20px;
-  font-size: 1.66667rem;
-  line-height: 1.8;
+  font-size: 18px;
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
 h5, .epsilon {
@@ -507,6 +511,205 @@ figure > img {
  * Objects and abstractions
  */
 /*------------------------------------*\
+    $GRIDS
+\*------------------------------------*/
+/**
+ * Fluid and nestable grid system, e.g.:
+ *
+   <div class=gw>
+       
+       <div class="g one-third">
+           <p>One third grid</p>
+       </div>
+       
+       <div class="g two-thirds">
+           <p>Two thirds grid</p>
+       </div>
+       
+       <div class="g one-half">
+           <p>One half grid</p>
+       </div>
+       
+       <div class="g one-quarter">
+           <p>One quarter grid</p>
+       </div>
+       
+       <div class="g one-quarter">
+           <p>One quarter grid</p>
+       </div>
+       
+   </div>
+ *
+ */
+/**
+ * Grid wrapper
+ * 
+ * Shorthand and verbose
+ */
+.gw,
+.grid-wrapper {
+  /**
+   * Negative margin to negate the padding on the first grid child. 
+   */
+  margin-left: -18px;
+  /**
+   * The following declarations allow us to use the `.gw` class on lists.
+   */
+  list-style: none;
+  margin-bottom: 0;
+}
+
+/**
+ * Very infrequently occuring grid wrappers as children of grid wrappers.
+ */
+.gw > .gw,
+.grid-wrapper > .grid-wrapper {
+  margin-left: 0;
+}
+
+/**
+ * Grid
+ * 
+ * Shorthand and verbose
+ */
+.g,
+.grid {
+  float: left;
+  padding-left: 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/**
+ * Grid sizes in human readable format.
+ */
+/**
+ * Whole
+ */
+.one-whole {
+  width: 100%;
+}
+
+/**
+ * Halves
+ */
+.one-half, .two-quarters, .three-sixths, .four-eighths, .five-tenths, .six-twelfths {
+  width: 50%;
+}
+
+/**
+ * Thirds
+ */
+.one-third, .two-sixths, .four-twelfths {
+  width: 33.333%;
+}
+
+.two-thirds, .four-sixths, .eight-twelfths {
+  width: 66.666%;
+}
+
+/**
+ * Quarters
+ */
+.one-quarter, .two-eighths, .three-twelfths {
+  width: 25%;
+}
+
+.three-quarters, .six-eighths, .nine-twelfths {
+  width: 75%;
+}
+
+/**
+ * Fifths
+ */
+.one-fifth, .two-tenths, .four-tenths {
+  width: 20%;
+}
+
+.two-fifths {
+  width: 40%;
+}
+
+.three-fifths, .six-tenths {
+  width: 60%;
+}
+
+.four-fifths, .eight-tenths {
+  width: 80%;
+}
+
+/**
+ * Sixths
+ */
+.one-sixth, .two-twelfths {
+  width: 16.666%;
+}
+
+.five-sixths, .ten-twelfths {
+  width: 83.333%;
+}
+
+/**
+ * Eighths
+ */
+.one-eighth {
+  width: 12.5%;
+}
+
+.three-eighths {
+  width: 37.5%;
+}
+
+.five-eighths {
+  width: 62.5%;
+}
+
+.seven-eighths {
+  width: 87.5%;
+}
+
+/**
+ * Tenths
+ */
+.one-tenth {
+  width: 10%;
+}
+
+.three-tenths {
+  width: 30%;
+}
+
+.seven-tenths {
+  width: 70%;
+}
+
+.nine-tenths {
+  width: 90%;
+}
+
+/**
+ * Twelfths
+ */
+.one-twelfth {
+  width: 8.333%;
+}
+
+.five-twelfths {
+  width: 41.666%;
+}
+
+.seven-twelfths {
+  width: 58.333%;
+}
+
+.eleven-twelfths {
+  width: 91.666%;
+}
+
+/*------------------------------------*\
     $MEDIA
 \*------------------------------------*/
 /**
@@ -597,44 +800,6 @@ figure > img {
  */
 .islet {
   padding: 9px;
-}
-
-/*------------------------------------*\
-    $BLOCK-LIST
-\*------------------------------------*/
-/**
- * Create big blocky lists of content, e.g.:
- *
-   <ul class=block-list>
-      <li>Foo</li>
-      <li>Bar</li>
-      <li>Baz</li>
-      <li><a href=# class=block-list__link>Foo Bar Baz</a></li>
-   </ul>
-  *
-  * Extend this object in your theme stylesheet.
- */
-.block-list,
-.block-list > li {
-  border: 0 solid #ccc;
-  /* Override this color in your theme stylesheet */
-}
-
-.block-list {
-  list-style: none;
-  margin-left: 0;
-  border-top-width: 1px;
-}
-
-.block-list > li {
-  border-bottom-width: 1px;
-  padding: 9px;
-}
-
-.block-list__link {
-  display: block;
-  padding: 9px;
-  margin: -9px;
 }
 
 /*------------------------------------*\
@@ -773,7 +938,7 @@ figure > img {
 }
 
 /*------------------------------------*\
-    $CARD
+    CARD
 \*------------------------------------*/
 /**
  * This stylesheet controls the functionality of the card. Try and avoid
@@ -785,6 +950,8 @@ figure > img {
 /**
  * BASE.................Basic HTML elements
  * CARD.................The card itself
+ * INTRO................Avatar, name etc.
+ * ATTRIBUTION..........
  */
 /*------------------------------------*\
     $BASE
@@ -843,17 +1010,14 @@ html {
   }
 }
 /*------------------------------------*\
-    $TITLE
+    $INTRO
 \*------------------------------------*/
-.title {
-  margin-bottom: 0;
+.intro__avatar {
+  max-width: 54px;
 }
 
-/*------------------------------------*\
-    $AVATAR
-\*------------------------------------*/
-.avatar {
-  max-width: 54px;
+.intro__name {
+  margin-bottom: 0;
 }
 
 /*------------------------------------*\
@@ -864,7 +1028,7 @@ html {
 }
 
 /*------------------------------------*\
-    $THEME
+    THEME
 \*------------------------------------*/
 /**
  * This is your theme stylesheet where you apply your design to your card and
@@ -876,14 +1040,15 @@ html {
 /**
  * BASE.................Basic HTML elements
  * CARD.................Card personalisation
+ * INTRO................Avatar, name etc.
  * ATTRIBUTION..........If you gotta have it you might as well make it look nice
  */
 /*------------------------------------*\
     $BASE
 \*------------------------------------*/
 html {
-  background-color: #333;
-  color: #fff;
+  background-color: #fafafa;
+  color: #333;
   font-family: sans-serif;
 }
 
@@ -895,14 +1060,70 @@ a {
     $CARD
 \*------------------------------------*/
 .card {
+  position: relative;
+}
+
+.card,
+.card:before,
+.card:after {
+  border: 9px solid #f0f0f0;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  -ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  -o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.card:before,
+.card:after {
+  content: "";
+  display: block;
   background-color: #fff;
-  color: #333;
+  z-index: -1;
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  -webkit-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+
+.card:after {
+  z-index: -2;
+  -webkit-transform: rotate(-1.5deg);
+  -moz-transform: rotate(-1.5deg);
+  -ms-transform: rotate(-1.5deg);
+  -o-transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg);
+}
+
+.follow-list {
+  text-align: center;
+  list-style: none;
+  margin-left: 0;
+}
+
+/*------------------------------------*\
+    $INTRO
+\*------------------------------------*/
+.intro__tagline {
+  font-weight: bold;
 }
 
 /*------------------------------------*\
     $ATTRIBUTION
 \*------------------------------------*/
+.attribution {
+  text-align: right;
+}
+
 .attribution__link {
   display: block;
-  color: #fff;
+  color: #999;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }

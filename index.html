@@ -3,13 +3,15 @@
 <head>
 	<meta charset=UTF-8>
 	<meta name=viewport content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name=apple-mobile-web-app-capable content=yes>
+	<meta name=apple-mobile-web-app-status-bar-style content="">
 
-	<title>pr.ofile.me</title>
+	<title>Harry Roberts &ndash; pr.ofile.me</title>
 
 	<link rel=stylesheet href=css/pr.ofile.me.css>
 
 	<link rel="shortcut icon" href=img/avatar.png>
-	<link rel=apple-touch-icon-precomposed href=avatar.png>
+	<link rel=apple-touch-icon-precomposed href=img/avatar.png>
 	<link type=text/plain rel=author href=humans.txt>
 </head>
 <body>
@@ -20,15 +22,21 @@
             
             <div class="media  intro">
                 
-                <img src=img/avatar.png alt="Photo of Harry Roberts" class="media__img  avatar">
+                <img src=img/avatar.png alt="Photo of Harry Roberts" class="media__img  intro__avatar" width=54 height=54>
                 <div class=media__body>
-                    <h1 class="gamma  title">Harry Roberts</h1>
-                    <p class="tagline">Front-end architect</p>
+                    <h1 class="gamma  intro__name">Harry Roberts</h1>
+                    <p class=intro__tagline>Front-end Architect</p>
                 </div>
                 
             </div><!-- /intro -->
             
-            <p>I&rsquo;m Harry; a writer, speaker and tinkerer from the UK. I am a Senior UI Developer for BSkyB.</p>
+            <p>I&rsquo;m Harry; a 22 year old designer, developer, writer, and speaker from the UK. I am a Senior UI Developer for BSkyB.</p>
+            
+            <p>I <a href=http://csswizardry.com>write</a>, <a href=http://speakerdeck.com/u/csswizardry/>speak</a> and <a href=http://twitter.com/csswizardry>tweet</a> about CSS architecture, maintainable and scalable front-ends, object oriented CSS and more.</p>
+            
+            <p>I created <a href=http://inuitcss.com>inuit.css</a>&mdash;a small yet hugely powerful CSS framework built on Sass&mdash;and <a href=http://pr.ofile.me>pr.ofile.me</a>, a toolkit for building digital, mobile optimised business cards like this one.</p>
+            
+            <p><a href="http://twitter.com/csswizardry" class="twitter-follow-button">Follow @csswizardry</a></p>
             
         </div><!-- /card__front -->
         
@@ -36,21 +44,32 @@
             
             <h2 class=gamma>Contact me</h2>
             
-            <ul class=block-list>
-                <li><a href=http://twitter.com/csswizardry class=block-list__link>@csswizardry</a></li>
-                <li>GitHub</li>
-                <li>Flickr</li>
+            <p>I&rsquo;m all over the internet. If you want to get in touch with me I&rsquo;d recommend <a href=http://twitter.com/csswizardry>tweeting at me</a> or <a href=mailto:harry@csswizardry.com>emailing me</a> You can also follow my nerdery, articles, projects and more on:</p>
+            
+            <ul class=follow-list>
+                <li>
+                    <a href="http://twitter.com/csswizardry" class="twitter-follow-button">Follow @csswizardry</a>
+                </li>
+                <li>
+                    <iframe src="http://ghbtns.com/github-btn.html?user=csswizardry&amp;type=follow&amp;count=true" allowtransparency=true frameborder=0 scrolling=0 width=165px height=20px></iframe>
+                </li>
             </ul>
             
         </div><!-- /card__back -->
         
     </div>
     
+    <!--
+        If you would like to remove this attribution notice please consider
+        donating to pr.ofile.me on the project home page. Thanks!
+    -->
     <p class=attribution>
-        <a href=# class="attribution__link  complex-link">
+        <a href=http://pr.ofile.me class="attribution__link  complex-link">
             <small class=milli>Created with <b class=complex-link__target>pr.ofile.me</b></small>
         </a>
     </p>
+    
+    <script src=http://platform.twitter.com/widgets.js></script>
     
 </body>
 </html>
