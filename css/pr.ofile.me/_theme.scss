@@ -49,6 +49,7 @@ a{
 .card,
     .card:before,
     .card:after{
+        background-color:#fff;
         border:9px solid #f0f0f0;
         @include vendor(border-radius, 4px);
         @include vendor(box-shadow, 0 0 10px rgba(0,0,0,0.25));
@@ -57,7 +58,6 @@ a{
     .card:after{
         content:"";
         display:block;
-        background-color:#fff;
         z-index:-1;
         position:absolute;
         top:   -10px;
