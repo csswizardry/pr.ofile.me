@@ -73,4 +73,4 @@ business card over simply rotate your phone.
 These lovely people have [donated to pr.ofile.me](http://gum.co/VqTV), why not
 view their cards?
 
-* **Name:** _Profile URL_
+* **Joshua Hibbert:** [joshnh.com/card](http://joshnh.com/card/)
