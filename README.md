@@ -24,7 +24,7 @@ things.
 ## Demo
 
 My demo card can be found at
-[hry.rbrts.me/profile](http://hry.rbrts.me/profile/index.html)
+[http://csswizardry.github.com/pr.ofile.me](csswizardry.github.com/pr.ofile.me)
 
 ## Installation and usage
 
