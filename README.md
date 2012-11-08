@@ -24,7 +24,7 @@ things.
 ## Demo
 
 My demo card can be found at
-[http://csswizardry.github.com/pr.ofile.me](csswizardry.github.com/pr.ofile.me)
+[csswizardry.github.com/pr.ofile.me](http://csswizardry.github.com/pr.ofile.me)
 
 ## Installation and usage
 
